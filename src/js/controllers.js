@@ -2,8 +2,12 @@
 angular.module('myApp.controllers', ['myApp.filters'])
   .controller('NgAnimateCtrl', ['$scope', function ($scope) {
     $scope.items = [
-      { text: "call mum", completed: false },
-      { text: "do laundry", completed: false }
+      { text: "Study Angular", completed: false },
+      { text: "Study Python", completed: false },
+      { text: "Study AWS", completed: false },
+      { text: "Get job", completed: false },
+      { text: "Morera Loan", completed: false },
+      { text: "Sumpter Loan", completed: false }
     ];
 
     $scope.inputText = "";

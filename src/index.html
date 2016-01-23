@@ -11,12 +11,25 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body ng-app="myApp">
-  <div ng-controller="ngAnimateCtrl">
-    <input ng-model="inputText" />
-    <button ng-click="addItem()">add</button>
-    <div class="item" ng-repeat="item in items | active">
-      <input type="checkbox" ng-model="item.completed"/>&nbsp;
-      <span ng-bind="item.text"></span>
+  <div class="cover-container">
+
+    <div class="masthead clearfix">
+      <div class="inner text-center">
+        <h3 class="masterhead-brand">TodoStrap</h3>
+      </div>
+    </div>
+
+    <div class="inner cover">
+      <div ng-controller="NgAnimateCtrl">
+      <form role="form">
+        <input ng-model="inputText" type="text" class="input-lg form-control" placeholder="What do you want to do today?" autofocus ng-keyup="addItem($event)">
+      </form>
+
+        <div class="list-group" style="padding: 0px; margin-top: 10px;">
+          <a href="javascript:void(0);" class="list-group-item item" ng-repeat="item in items | active" ng-click="item.completed = !item.completed">
+            <span ng-bind="item.text"></span>
+          </a>
+        </div>
     </div>
   </div>
 
